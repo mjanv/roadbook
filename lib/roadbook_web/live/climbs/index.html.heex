@@ -1,0 +1,10 @@
+<div id="map" style="width: 100%; height: 700px;" phx-update="ignore"></div>
+<script>
+  console.log('SCRIPT');
+  var map = new maplibregl.Map({
+    container: 'map',
+    style: 'https://demotiles.maplibre.org/style.json',
+    center: [-74.5, 40],
+    zoom: 0
+  });
+</script>

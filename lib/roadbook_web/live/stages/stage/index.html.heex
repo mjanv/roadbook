@@ -1,0 +1,47 @@
+<.header>
+  Listing Stages
+  <:actions>
+    <.link patch={~p"/stages/stage/new"}>
+      <.button>New Stage</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table
+  id="stages"
+  rows={@streams.stages}
+  row_click={fn {_id, stage} -> JS.navigate(~p"/stages/stage/#{stage}") end}
+>
+  <:col :let={{_id, stage}} label="Title"><%= stage.title %></:col>
+  <:col :let={{_id, stage}} label="Data"><%= stage.data %></:col>
+  <:action :let={{_id, stage}}>
+    <div class="sr-only">
+      <.link navigate={~p"/stages/stage/#{stage}"}>Show</.link>
+    </div>
+    <.link patch={~p"/stages/stage/#{stage}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={{id, stage}}>
+    <.link
+      phx-click={JS.push("delete", value: %{id: stage.id}) |> hide("##{id}")}
+      data-confirm="Are you sure?"
+    >
+      Delete
+    </.link>
+  </:action>
+</.table>
+
+<.modal
+  :if={@live_action in [:new, :edit]}
+  id="stage-modal"
+  show
+  on_cancel={JS.patch(~p"/stages")}
+>
+  <.live_component
+    module={RoadbookWeb.Stages.StageLive.FormComponent}
+    id={@stage.id || :new}
+    title={@page_title}
+    action={@live_action}
+    stage={@stage}
+    patch={~p"/stages"}
+  />
+</.modal>
