@@ -1,6 +1,6 @@
 # Roadbook
 
-# Introduction
+## Introduction
 
 *Roadbook* is a tool to help route planner ([Komoot](https://www.komoot.com), [Strava](https://www.strava.com), ...) users to create elevation maps from a GPS track.
 
@@ -22,35 +22,43 @@ just start
 To run the web application,
 
 ```bash
-mix phx.server
+just start
+just run
 ```
 
-## Todo
+## Roadmap
 
 ### Core
 
-- [ ] Implement https://caspg.com/blog/playing-with-gpx-tracks-in-elixir-and-postgis
-- [ ] GPX > POSTGIS > GeoJson converter
+- [ ] Write a GPX file / POSTGIS representation / GeoJson format converter
+- [x] Write Climb unit tests
+- [ ] Write a climb research engine to filter climbs by name, elevation, average slope or start/stop
+- [ ] Create an elevation profile object
 - [ ] Climb Profile graph generator
-- [ ] Climb Research engine
-- [x] Write Climb Unit test
-- [ ] Create Elevation Map object
- 
+
 ### Web
 
-- [ ] GPX file dump
-- [ ] Create an homepage infinite Map
+- [ ] The homepage is an infinite map displaying availables climbs
+- [ ] An user can drag&drop an GPX file to the server
+- [ ] When a user submits a GPX file,
+  - [ ] the track is displayed onto a map
+  - [ ] the track is analyzed to find all climbs profiles
+  - [ ] all climbs profiles are displayed besides the map
 
 ### Providers
 
-- [ ] Export GPX from Strava
-- [x] Dump data from https://www.cols-cyclisme.com
-- [ ] Extract climbs start and stop locations
-- [ ] Extract data from OpenStreetMap
+- [ ] GPX file dump from Strava planner is available
+- [x] Climbs profile dataset from [Cols Cyclisme](https://www.cols-cyclisme.com) can be extracted
+- [ ] From a given climb dataset, start and stop locations of each climb can be extracted
+- [ ] Climb profile data from OpenStreetMap using the start and stop locations descriptions
 
 ### Release
 
-- [ ] Dialyzer
-- [ ] Deploy on Fly.io
-- [ ] Github actions
-- [ ] Install Plausible.io
+- [ ] Code quality is constrained by Dialyzer
+- [ ] Github actions are used to test the quality, run the unit tests and deploy the applications
+- [ ] The application can be deployed on Fly.io
+- [ ] The application usage can be monitored using Plausible.io
+
+## Ressources
+
+- [Playing with GPX tracks in Elixir and PostGIS](https://caspg.com/blog/playing-with-gpx-tracks-in-elixir-and-postgis)
