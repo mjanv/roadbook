@@ -4,7 +4,7 @@ defmodule Roadbook.MixProject do
   def project do
     [
       app: :roadbook,
-      version: "0.1.0",
+      version: "#{Date.utc_today().year}.#{Date.utc_today().month}.#{Date.utc_today().day}",
       elixir: "~> 1.14",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
