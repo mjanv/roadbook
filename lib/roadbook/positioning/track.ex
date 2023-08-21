@@ -9,7 +9,7 @@ defmodule Roadbook.Positioning.Track do
           profiles: [ElevationProfile.t()]
         }
 
-  alias Roadbook.Positioning.{ElevationProfile, Segment}
+  alias Roadbook.Positioning.ElevationProfile
 
   def compute(%__MODULE__{segments: segments} = track) do
     %{track | profiles: Enum.map(segments, &ElevationProfile.compute/1)}

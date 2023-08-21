@@ -1,7 +1,7 @@
 defmodule Roadbook.Positioning.ElevationProfile do
   @moduledoc false
 
-  alias Roadbook.Positioning.{Segment, Point, Vector}
+  alias Roadbook.Positioning.{Point, Segment, Vector}
 
   defstruct [:vectors]
 
