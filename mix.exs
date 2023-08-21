@@ -6,6 +6,9 @@ defmodule Roadbook.MixProject do
       app: :roadbook,
       version: "#{Date.utc_today().year}.#{Date.utc_today().month}.#{Date.utc_today().day}",
       elixir: "~> 1.14",
+      elixirc_options: [
+        warnings_as_errors: true
+      ],
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),

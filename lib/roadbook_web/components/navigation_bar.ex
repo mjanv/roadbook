@@ -1,7 +1,8 @@
 defmodule RoadbookWeb.Components.NavigationBar do
   @moduledoc false
 
-  use Phoenix.LiveView
+  import Phoenix.Component
+  import Phoenix.LiveView
 
   def on_mount(:default, _params, _session, socket) do
     {:cont, attach_hook(socket, :active, :handle_params, &set_active/3)}
