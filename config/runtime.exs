@@ -69,7 +69,7 @@ if config_env() == :prod do
     ],
     secret_key_base: secret_key_base
 
-  config :todo_list, Roadbook.Metrics,
+  config :roadbook, Roadbook.Metrics,
     manual_metrics_start_delay: :no_delay,
     grafana: [
       host: System.get_env("GRAFANA_HOST") || raise("GRAFANA_HOST is required"),
