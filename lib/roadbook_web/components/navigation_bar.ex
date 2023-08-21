@@ -7,7 +7,7 @@ defmodule RoadbookWeb.Components.NavigationBar do
     {:cont, attach_hook(socket, :active, :handle_params, &set_active/3)}
   end
 
-  defp set_active(params, _url, socket) do
+  defp set_active(_params, _url, socket) do
     active =
       case {socket.view, socket.assigns.live_action} do
         {RoadbookWeb.Climbs.ClimbsLive.Index, _} -> :home
