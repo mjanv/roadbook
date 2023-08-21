@@ -13,19 +13,19 @@ defmodule RoadbookWeb.Stages.StageLive.Show do
 
   @impl true
   def handle_params(%{"id" => id}, _, socket) do
-    route = GpxParser.read("priv/gps/test_komoot.gpx").segment
+    route = List.first(GpxParser.read("priv/gps/test_komoot.gpx").segments)
 
     map =
       MapLibre.new(
         style: :terrain,
-        center: {List.first(route).lon, List.first(route).lat},
+        center: {List.first(route.points).lon, List.first(route.points).lat},
         zoom: 9
       )
       |> MapLibre.add_table_source(
         "map",
         %{
-          "lat" => Enum.map(route, fn x -> x.lat end),
-          "lon" => Enum.map(route, fn x -> x.lon end)
+          "lat" => Enum.map(route.points, fn x -> x.lat end),
+          "lon" => Enum.map(route.points, fn x -> x.lon end)
         },
         {:lng_lat, ["lon", "lat"]}
       )

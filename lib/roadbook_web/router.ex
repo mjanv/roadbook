@@ -14,23 +14,20 @@ defmodule RoadbookWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
-  end
 
-  scope "/climbs", RoadbookWeb.Climbs, as: :climbs do
-    pipe_through :browser
+    live_session :default,
+      on_mount: [
+        RoadbookWeb.Components.NavigationBar
+      ] do
+      live "/climbs", Climbs.ClimbsLive.Index, :index
 
-    live "/", ClimbsLive.Index, :index
-  end
+      live "/stages", Stages.StageLive.Index, :index
+      live "/stages/stage/new", Stages.StageLive.Index, :new
+      live "/stages/stage/:id/edit", Stages.StageLive.Index, :edit
 
-  scope "/stages", RoadbookWeb.Stages, as: :stages do
-    pipe_through :browser
-
-    live "/", StageLive.Index, :index
-    live "/stage/new", StageLive.Index, :new
-    live "/stage/:id/edit", StageLive.Index, :edit
-
-    live "/stage/:id", StageLive.Show, :show
-    live "/stage/:id/show/edit", StageLive.Show, :edit
+      live "/stages/stage/:id", Stages.StageLive.Show, :show
+      live "/stages/stage/:id/show/edit", Stages.StageLive.Show, :edit
+    end
   end
 
   if Application.compile_env(:roadbook, :dev_routes) do
