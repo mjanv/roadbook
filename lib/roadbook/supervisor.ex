@@ -10,6 +10,7 @@ defmodule Roadbook.Supervisor do
   @impl true
   def init(_args) do
     children = [
+      Roadbook.Metrics,
       # Roadbook.EventStore,
       Roadbook.Repo,
       {Oban, Application.fetch_env!(:roadbook, Oban)}

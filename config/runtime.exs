@@ -69,6 +69,16 @@ if config_env() == :prod do
     ],
     secret_key_base: secret_key_base
 
+  config :todo_list, Roadbook.Metrics,
+    manual_metrics_start_delay: :no_delay,
+    grafana: [
+      host: System.get_env("GRAFANA_HOST") || raise("GRAFANA_HOST is required"),
+      auth_token: System.get_env("GRAFANA_TOKEN") || raise("GRAFANA_TOKEN is required"),
+      upload_dashboards_on_start: true,
+      folder_name: "Roadbook Dashboards",
+      annotate_app_lifecycle: true
+    ]
+
   # ## SSL Support
   #
   # To get SSL working, you will need to add the `https` key

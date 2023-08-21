@@ -55,8 +55,9 @@ just run
 ### Release
 
 - [ ] Code quality is constrained by Dialyzer
-- [ ] Github actions are used to test the quality, run the unit tests and deploy the applications
-- [ ] The application can be deployed on Fly.io
+- [x] Github actions are used to test the quality, run the unit tests and deploy the applications
+- [x] The application can be deployed on Fly.io
+- [ ] The application runtime can be monitored using Prometheus/Grafana
 - [ ] The application usage can be monitored using Plausible.io
 
 ## Ressources
