@@ -46,7 +46,7 @@ defmodule Roadbook.MixProject do
       {:kino_db, "~> 0.2"},
       {:req, "~> 0.3.0"},
       {:oban, "~> 2.15"},
-      {:swoosh, "~> 1.3", runtime: false},
+      {:swoosh, "~> 1.11"},
       {:finch, "~> 0.13"},
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},

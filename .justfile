@@ -12,3 +12,6 @@ db:
 
 stop:
     docker-compose down --volumes
+
+prod:
+    fly postgres connect -a roadbook-db
