@@ -25,5 +25,5 @@ swap_size_mb = 512
     soft_limit = 1000
 
 [metrics]
-  port = 4000
+  port = 8080
   path = "/metrics"
