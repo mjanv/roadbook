@@ -38,7 +38,8 @@ just run
 
 ### Web
 
-- [ ] User account can be created
+- [x] User accounts can be created from a registration page
+- [x] Users can log in or out.
 - [ ] The homepage is an infinite map displaying availables climbs
 - [ ] An user can drag&drop an GPX file to the server
 - [ ] When a user submits a GPX file,
@@ -58,7 +59,7 @@ just run
 - [ ] Code quality is constrained by Dialyzer
 - [x] Github actions are used to test the quality, run the unit tests and deploy the applications
 - [x] The application can be deployed on Fly.io
-- [ ] The application runtime can be monitored using Prometheus/Grafana
+- [x] The application runtime can be monitored using Prometheus/Grafana
 - [ ] The application usage can be monitored using Plausible.io
 
 ## Ressources

@@ -21,7 +21,7 @@ defmodule Roadbook.Metrics do
   @impl true
   def dashboard_assigns do
     [
-      datasource_id: "prometheus"
+      datasource_id: "roadbook-prometheus"
     ]
   end
 
