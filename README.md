@@ -38,6 +38,7 @@ just run
 
 ### Web
 
+- [ ] User account can be created
 - [ ] The homepage is an infinite map displaying availables climbs
 - [ ] An user can drag&drop an GPX file to the server
 - [ ] When a user submits a GPX file,
