@@ -20,6 +20,7 @@ defmodule RoadbookWeb.Router do
 
     live_session :default,
       on_mount: [
+        {RoadbookWeb.UserAuth, :ensure_authenticated},
         RoadbookWeb.Components.NavigationBar
       ] do
       live "/climbs", Climbs.ClimbsLive.Index, :index
@@ -82,7 +83,10 @@ defmodule RoadbookWeb.Router do
     delete "/users/log_out", UserSessionController, :delete
 
     live_session :current_user,
-      on_mount: [{RoadbookWeb.UserAuth, :mount_current_user}] do
+      on_mount: [
+        RoadbookWeb.Components.NavigationBar,
+        {RoadbookWeb.UserAuth, :mount_current_user}
+      ] do
       live "/users/confirm/:token", UserConfirmationLive, :edit
       live "/users/confirm", UserConfirmationInstructionsLive, :new
     end

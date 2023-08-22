@@ -2,7 +2,7 @@ name: Fly.io deployment
 
 on:
   workflow_run:
-    workflows: ["Elixir CI"]
+    workflows: ["Unit tests"]
     branches: [main]
     types: 
       - completed

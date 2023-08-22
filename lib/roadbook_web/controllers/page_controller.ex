@@ -3,6 +3,5 @@ defmodule RoadbookWeb.PageController do
 
   def home(conn, _params) do
     render(conn, :home, layout: false)
-    # redirect(conn, to: ~p"/climbs")
   end
 end
