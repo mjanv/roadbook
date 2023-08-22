@@ -16,7 +16,6 @@ permissions:
 jobs:
   test:
     name: Unit tests ${{matrix.otp}} / ${{matrix.elixir}}
-    needs: quality
     runs-on: ubuntu-latest
     services:
       db:
