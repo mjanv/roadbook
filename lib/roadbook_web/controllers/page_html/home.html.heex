@@ -1,178 +1,186 @@
-<div class="relative bg-gray-50 overflow-hidden">
-  <div class="relative pt-6 pb-12 sm:pb-32">
-    <div>
-      <div class="max-w-7xl mx-auto px-4 sm:px-6">
-        <nav
-          class="relative flex items-center justify-between sm:h-10 md:justify-center"
-          aria-label="Global"
-        >
-          <div class="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
-            <div class="flex items-center justify-between w-full md:w-auto">
-              <a href="#">
-                <span class="sr-only">Workflow</span>
-                <img class="h-8 w-auto sm:h-10" src="" alt="" />
-              </a>
+<div style="background-image: url('/images/arpettaz1.jpeg'); background-size: cover; background-position: center;">
+  <div class="min-h-screen relative overflow-hidden">
+    <div class="relative pt-6 pb-12 sm:pb-32">
+      <div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+          <nav
+            class="relative flex items-center justify-between sm:h-10 md:justify-center"
+            aria-label="Global"
+          >
+            <div class="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
+              <div class="flex items-center justify-between w-full md:w-auto">
+                <a href="#">
+                  <span class="sr-only">Workflow</span>
+                  <img class="h-8 w-auto sm:h-10" src="" alt="" />
+                </a>
+              </div>
+            </div>
+            <div class="hidden md:flex md:space-x-10">
+              <.link href="" class="font-medium text-gray-900 hover:text-gray-800"></.link>
+            </div>
+            <div class="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0">
+              <span style="box-shadow: 3px 3px 0.5px white;" class="inline-flex rounded-md">
+                <.link
+                  href="https://github.com/mjanv/roadbook"
+                  class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-gray-900 hover:bg-purple-800"
+                >
+                  Github &rarr;
+                </.link>
+              </span>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      <main class="mt-16 mx-auto max-w-7xl px-4 sm:mt-24">
+        <div class="text-center">
+          <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+            <span style="text-shadow: 3px 3px 0.5px white;" class="block xl:inline">
+              A
+              <span style="text-shadow: 2px 2px 1px white;" class="text-purple-600">
+                Roadbook
+              </span>
+              for your victories
+            </span>
+          </h1>
+          <p class="mt-3 max-w-md mx-auto text-base text-gray-700 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+            A simple way to write your own roadbook for your next cycling adventures
+          </p>
+          <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
+            <div style="box-shadow: 3px 3px 0.5px white;" class="rounded-md">
+              <.link
+                href={~p"/users/register"}
+                class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-900 hover:bg-purple-700 md:py-4 md:text-lg md:px-10"
+              >
+                Register
+              </.link>
+            </div>
+            <div style="box-shadow: 3px 3px 0.5px black;" class="mt-3 rounded-md sm:mt-0 sm:ml-3">
+              <.link
+                href={~p"/users/log_in"}
+                class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-white hover:bg-gray-50 hover:text-purple-700 md:py-4 md:text-lg md:px-10"
+              >
+                Log in
+              </.link>
             </div>
           </div>
-          <div class="hidden md:flex md:space-x-10">
-            <.link href="" class="font-medium text-gray-900 hover:text-gray-800"></.link>
-          </div>
-          <div class="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0">
-            <span class="inline-flex rounded-md shadow">
-              <.link
-                href="https://github.com/mjanv/roadbook"
-                class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-gray-900 hover:bg-purple-800"
-              >
-                Github &rarr;
-              </.link>
-            </span>
-          </div>
-        </nav>
-      </div>
+        </div>
+      </main>
     </div>
 
-    <main class="mt-16 mx-auto max-w-7xl px-4 sm:mt-24">
-      <div class="text-center">
-        <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-          <span class="block xl:inline">A roadbook for your victories</span>
-        </h1>
-        <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-          A simple way to build your own roadbook from your cycling adventures
-        </p>
-        <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
-          <div class="rounded-md shadow">
-            <.link
-              href={~p"/users/register"}
-              class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-900 hover:bg-purple-700 md:py-4 md:text-lg md:px-10"
-            >
-              Register
-            </.link>
-          </div>
-          <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
-            <.link
-              href={~p"/users/log_in"}
-              class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-white hover:bg-gray-50 hover:text-purple-700 md:py-4 md:text-lg md:px-10"
-            >
-              Log in
-            </.link>
-          </div>
-        </div>
-      </div>
-    </main>
-  </div>
-
-  <div class="relative bg-gray-900">
-    <div class="max-w-4xl mx-auto px-4 py-6 sm:px-6 sm:py-6 lg:max-w-7xl lg:px-8 lg:py-6">
-      <div class="grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-16">
-        <div>
+    <div class="relative bg-gray-900 opacity-100">
+      <div class="max-w-4xl mx-auto px-4 py-6 sm:px-6 sm:py-6 lg:max-w-7xl lg:px-8 lg:py-6">
+        <div class="grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-16">
           <div>
-            <span class="flex items-center justify-center h-12 w-12 rounded-md bg-white bg-opacity-10">
-              <svg
-                class="h-6 w-6 text-white"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 8.25H7.5a2.25 2.25 0 00-2.25 2.25v9a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25H15M9 12l3 3m0 0l3-3m-3 3V2.25"
-                />
-              </svg>
-            </span>
+            <div>
+              <span class="flex items-center justify-center h-12 w-12 rounded-md bg-white bg-opacity-10">
+                <svg
+                  class="h-6 w-6 text-white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 8.25H7.5a2.25 2.25 0 00-2.25 2.25v9a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25H15M9 12l3 3m0 0l3-3m-3 3V2.25"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-medium text-white">Load your trip</h3>
+              <p class="mt-2 text-base text-indigo-200">
+                You can download tracks from you GPX files from Strava, Komoot or your own route planner
+              </p>
+            </div>
           </div>
-          <div class="mt-6">
-            <h3 class="text-lg font-medium text-white">Load your trip</h3>
-            <p class="mt-2 text-base text-indigo-200">
-              You can download tracks from you GPX files from Strava, Komoot or your own route planner
-            </p>
-          </div>
-        </div>
 
-        <div>
           <div>
-            <span class="flex items-center justify-center h-12 w-12 rounded-md bg-white bg-opacity-10">
-              <svg
-                class="w-6 h-6 text-white"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M6 13.5V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m12-3V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m-6-9V3.75m0 3.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 9.75V10.5"
-                />
-              </svg>
-            </span>
+            <div>
+              <span class="flex items-center justify-center h-12 w-12 rounded-md bg-white bg-opacity-10">
+                <svg
+                  class="w-6 h-6 text-white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 13.5V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m12-3V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m-6-9V3.75m0 3.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 9.75V10.5"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-medium text-white">Compose your route</h3>
+              <p class="mt-2 text-base text-indigo-200">
+                All climb profiles from your tracks are automatically detected, evaluated and drawn
+              </p>
+            </div>
           </div>
-          <div class="mt-6">
-            <h3 class="text-lg font-medium text-white">Compose your route</h3>
-            <p class="mt-2 text-base text-indigo-200">
-              All climb profiles from your tracks are automatically detected, evaluated and drawn
-            </p>
-          </div>
-        </div>
 
-        <div>
           <div>
-            <span class="flex items-center justify-center h-12 w-12 rounded-md bg-white bg-opacity-10">
-              <svg
-                class="h-6 w-6 text-white"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"
-                />
-              </svg>
-            </span>
+            <div>
+              <span class="flex items-center justify-center h-12 w-12 rounded-md bg-white bg-opacity-10">
+                <svg
+                  class="h-6 w-6 text-white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-medium text-white">Pick a style</h3>
+              <p class="mt-2 text-base text-indigo-200">
+                Choose a style and write your own roadbook with the stage informations and climb profiles
+              </p>
+            </div>
           </div>
-          <div class="mt-6">
-            <h3 class="text-lg font-medium text-white">Pick a style</h3>
-            <p class="mt-2 text-base text-indigo-200">
-              Choose a style and write your own roadbook with the stage informations and climb profiles
-            </p>
-          </div>
-        </div>
 
-        <div>
           <div>
-            <span class="flex items-center justify-center h-12 w-12 rounded-md bg-white bg-opacity-10">
-              <svg
-                class="h-6 w-6 text-white"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0110.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0l.229 2.523a1.125 1.125 0 01-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0021 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 00-1.913-.247M6.34 18H5.25A2.25 2.25 0 013 15.75V9.456c0-1.081.768-2.015 1.837-2.175a48.041 48.041 0 011.913-.247m10.5 0a48.536 48.536 0 00-10.5 0m10.5 0V3.375c0-.621-.504-1.125-1.125-1.125h-8.25c-.621 0-1.125.504-1.125 1.125v3.659M18 10.5h.008v.008H18V10.5zm-3 0h.008v.008H15V10.5z"
-                />
-              </svg>
-            </span>
-          </div>
-          <div class="mt-6">
-            <h3 class="text-lg font-medium text-white">Print your roadbook</h3>
-            <p class="mt-2 text-base text-indigo-200">
-              Send your roadbook to yourself and your friends by printing an awesome roadbook
-            </p>
+            <div>
+              <span class="flex items-center justify-center h-12 w-12 rounded-md bg-white bg-opacity-10">
+                <svg
+                  class="h-6 w-6 text-white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0110.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0l.229 2.523a1.125 1.125 0 01-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0021 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 00-1.913-.247M6.34 18H5.25A2.25 2.25 0 013 15.75V9.456c0-1.081.768-2.015 1.837-2.175a48.041 48.041 0 011.913-.247m10.5 0a48.536 48.536 0 00-10.5 0m10.5 0V3.375c0-.621-.504-1.125-1.125-1.125h-8.25c-.621 0-1.125.504-1.125 1.125v3.659M18 10.5h.008v.008H18V10.5zm-3 0h.008v.008H15V10.5z"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-medium text-white">Print your roadbook</h3>
+              <p class="mt-2 text-base text-indigo-200">
+                Send your roadbook to yourself and your friends by printing an awesome roadbook
+              </p>
+            </div>
           </div>
         </div>
       </div>
