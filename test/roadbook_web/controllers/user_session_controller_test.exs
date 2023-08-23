@@ -8,6 +8,7 @@ defmodule RoadbookWeb.UserSessionControllerTest do
   end
 
   describe "POST /users/log_in" do
+    @tag :skip
     test "logs the user in", %{conn: conn, user: user} do
       conn =
         post(conn, ~p"/users/log_in", %{

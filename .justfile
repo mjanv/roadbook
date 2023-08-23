@@ -2,6 +2,7 @@ set dotenv-load
 
 start:
     docker-compose up --detach
+    sleep 3
     mix ecto.setup
 
 run:

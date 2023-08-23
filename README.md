@@ -9,7 +9,11 @@
 
 This application builds a full roadbook (all climbs profiles) for a given route.
 
-## Notebooks
+## Development
+
+To develop, you need to have [just](https://github.com/casey/just), [docker](https://www.docker.com/) and [docker-compose](https://docs.docker.com/compose/) installed.
+
+### Notebooks
 
 To help develop the application, you can use the notebooks accessible in the `notebooks/` folder. Any notebook can be run using the [local livebook](http://localhost:8080),
 
@@ -17,7 +21,7 @@ To help develop the application, you can use the notebooks accessible in the `no
 just start
 ```
 
-## Run local server
+### Run local server
 
 To run the web application,
 
@@ -56,7 +60,7 @@ just run
 
 ### Release
 
-- [ ] Code quality is constrained by Dialyzer
+- [ ] Code quality is evaluated by Dialyzer
 - [x] Github actions are used to test the quality, run the unit tests and deploy the applications
 - [x] The application can be deployed on Fly.io
 - [x] The application runtime can be monitored using Prometheus/Grafana
