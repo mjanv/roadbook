@@ -47,7 +47,7 @@ defmodule RoadbookWeb.Router do
 
   ## Authentication routes
 
-  scope "/", RoadbookWeb do
+  scope "/", RoadbookWeb.Accounts do
     pipe_through [:browser, :redirect_if_user_is_authenticated]
 
     live_session :redirect_if_user_is_authenticated,
@@ -64,7 +64,7 @@ defmodule RoadbookWeb.Router do
     post "/users/log_in", UserSessionController, :create
   end
 
-  scope "/", RoadbookWeb do
+  scope "/", RoadbookWeb.Accounts do
     pipe_through [:browser, :require_authenticated_user]
 
     live_session :require_authenticated_user,
@@ -77,7 +77,7 @@ defmodule RoadbookWeb.Router do
     end
   end
 
-  scope "/", RoadbookWeb do
+  scope "/", RoadbookWeb.Accounts do
     pipe_through [:browser]
 
     delete "/users/log_out", UserSessionController, :delete

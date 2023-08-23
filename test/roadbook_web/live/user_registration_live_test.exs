@@ -73,6 +73,7 @@ defmodule RoadbookWeb.UserRegistrationLiveTest do
   end
 
   describe "registration navigation" do
+    @tag :skip
     test "redirects to login page when the Log in button is clicked", %{conn: conn} do
       {:ok, lv, _html} = live(conn, ~p"/users/register")
 

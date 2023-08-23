@@ -1,32 +1,38 @@
-<.header>
-  Stage <%= @stage.id %>
-  <:subtitle>This is a stage record from your database.</:subtitle>
-  <:actions>
-    <.link patch={~p"/stages/stage/#{@stage}/show/edit"} phx-click={JS.push_focus()}>
-      <.button>Edit stage</.button>
-    </.link>
-  </:actions>
-</.header>
+<div class="max-w-7xl mx-auto py-12 sm:px-6 lg:px-8">
+  <.header>
+    Stage <%= @stage.title %>
+    <:subtitle></:subtitle>
+    <:actions>
+      <.link patch={~p"/stages/stage/#{@stage}/show/edit"} phx-click={JS.push_focus()}>
+        <.button>Edit stage</.button>
+      </.link>
+      <.link phx-click={JS.push("delete", value: %{id: @stage.id})} data-confirm="Are you sure?">
+        <.button>Delete stage</.button>
+      </.link>
+    </:actions>
+  </.header>
 
-<.list>
-  <:item title="Data"><%= @stage.data %></:item>
-  <:item title="Title"><%= @stage.title %></:item>
-</.list>
+  <.list>
+    <:item title="Id"><%= @stage.id %></:item>
+    <:item title="Title"><%= @stage.title %></:item>
+    <:item title="Data"><%= @stage.data %></:item>
+  </.list>
 
-<.back navigate={~p"/stages"}>Back to stages</.back>
+  <.back navigate={~p"/stages"}>Back to stages</.back>
 
-<.modal
-  :if={@live_action == :edit}
-  id="stage-modal"
-  show
-  on_cancel={JS.patch(~p"/stages/stage/#{@stage}")}
->
-  <.live_component
-    module={RoadbookWeb.Stages.StageLive.FormComponent}
-    id={@stage.id}
-    title={@page_title}
-    action={@live_action}
-    stage={@stage}
-    patch={~p"/stages/stage/#{@stage}"}
-  />
-</.modal>
+  <.modal
+    :if={@live_action == :edit}
+    id="stage-modal"
+    show
+    on_cancel={JS.patch(~p"/stages/stage/#{@stage}")}
+  >
+    <.live_component
+      module={RoadbookWeb.Stages.StageLive.FormComponent}
+      id={@stage.id}
+      title={@page_title}
+      action={@live_action}
+      stage={@stage}
+      patch={~p"/stages/stage/#{@stage}"}
+    />
+  </.modal>
+</div>

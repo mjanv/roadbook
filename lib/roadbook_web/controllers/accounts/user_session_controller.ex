@@ -1,4 +1,4 @@
-defmodule RoadbookWeb.UserSessionController do
+defmodule RoadbookWeb.Accounts.UserSessionController do
   use RoadbookWeb, :controller
 
   alias Roadbook.Accounts

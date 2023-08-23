@@ -1,4 +1,4 @@
-defmodule RoadbookWeb.UserResetPasswordLive do
+defmodule RoadbookWeb.Accounts.UserResetPasswordLive do
   use RoadbookWeb, :live_view
 
   alias Roadbook.Accounts

@@ -49,6 +49,13 @@ defmodule RoadbookWeb.Stages.StageLive.Show do
      |> assign(:map, map)}
   end
 
+  @impl true
+  def handle_event("delete", _params, socket) do
+    {:ok, _} = Stages.delete_stage(socket.assigns.stage)
+
+    {:noreply, redirect(socket, to: ~p"/stages")}
+  end
+
   defp page_title(:show), do: "Show Stage"
   defp page_title(:edit), do: "Edit Stage"
 end

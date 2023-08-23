@@ -1,4 +1,4 @@
-defmodule RoadbookWeb.UserConfirmationLive do
+defmodule RoadbookWeb.Accounts.UserConfirmationLive do
   use RoadbookWeb, :live_view
 
   alias Roadbook.Accounts
