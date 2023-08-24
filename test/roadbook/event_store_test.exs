@@ -7,7 +7,7 @@ defmodule Roadbook.EventStoreTest do
 
   @moduletag :external
 
-  test "Event can be dispatched on the {:ok, data} pattern" do
+  test "An event can be dispatched on the {:ok, data} pattern" do
     out =
       {:ok, %{id: "abc"}}
       |> EventStore.ok("a", fn data -> %UserCreated{id: data.id} end)
@@ -18,7 +18,7 @@ defmodule Roadbook.EventStoreTest do
     assert events == [%UserCreated{id: "abc"}]
   end
 
-  test "Event can be dispatched on the {:error, reason} pattern" do
+  test "An event can be dispatched on the {:error, reason} pattern" do
     out =
       {:error, :closed}
       |> EventStore.error("b", fn _reason -> %UserNotCreated{} end)

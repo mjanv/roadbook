@@ -5,7 +5,8 @@ defmodule Roadbook.Accounts do
 
   import Ecto.Query, warn: false
 
-  alias Roadbook.Accounts.{User, UserNotifier, UserToken}
+  alias Roadbook.Accounts.Services.UserNotifier
+  alias Roadbook.Accounts.{User, UserToken}
   # alias Roadbook.EventStore
   alias Roadbook.Repo
 

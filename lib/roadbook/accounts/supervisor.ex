@@ -10,7 +10,7 @@ defmodule Roadbook.Accounts.Supervisor do
   @impl true
   def init(_args) do
     children = [
-      # Roadbook.Accounts.Subcriptions.Logger
+      Roadbook.Accounts.Subcriptions.DeliverUserInstructions
     ]
 
     Supervisor.init(children, strategy: :one_for_one)
