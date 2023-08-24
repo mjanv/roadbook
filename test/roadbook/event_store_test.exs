@@ -5,6 +5,8 @@ defmodule Roadbook.EventStoreTest do
 
   alias Roadbook.EventStore
 
+  @moduletag :external
+
   test "Event can be dispatched on the {:ok, data} pattern" do
     out =
       {:ok, %{id: "abc"}}
