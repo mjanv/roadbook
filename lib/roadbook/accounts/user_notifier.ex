@@ -1,29 +1,13 @@
 defmodule Roadbook.Accounts.UserNotifier do
   @moduledoc false
 
-  import Swoosh.Email
-
   alias Roadbook.Notifications.Mailer
-
-  # Delivers the email using the application mailer.
-  defp deliver(recipient, subject, body) do
-    email =
-      new()
-      |> to(recipient)
-      |> from({"Roadbook", "contact@example.com"})
-      |> subject(subject)
-      |> text_body(body)
-
-    with {:ok, _metadata} <- Mailer.deliver(email) do
-      {:ok, email}
-    end
-  end
 
   @doc """
   Deliver instructions to confirm account.
   """
   def deliver_confirmation_instructions(user, url) do
-    deliver(user.email, "Confirmation instructions", """
+    Mailer.send(user.email, "Confirmation instructions", """
 
     ==============================
 
@@ -43,7 +27,7 @@ defmodule Roadbook.Accounts.UserNotifier do
   Deliver instructions to reset a user password.
   """
   def deliver_reset_password_instructions(user, url) do
-    deliver(user.email, "Reset password instructions", """
+    Mailer.send(user.email, "Reset password instructions", """
 
     ==============================
 
@@ -63,7 +47,7 @@ defmodule Roadbook.Accounts.UserNotifier do
   Deliver instructions to update a user email.
   """
   def deliver_update_email_instructions(user, url) do
-    deliver(user.email, "Update email instructions", """
+    Mailer.send(user.email, "Update email instructions", """
 
     ==============================
 

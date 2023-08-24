@@ -9,7 +9,7 @@ run:
     mix phx.server
 
 db:
-    PGPASSWORD=postgres psql -d postgres -h localhost -p 5432 -U postgres
+    PGPASSWORD=postgres psql -d roadbook_dev -h localhost -p 5432 -U postgres
 
 stop:
     docker-compose down --volumes

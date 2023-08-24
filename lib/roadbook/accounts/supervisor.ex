@@ -1,4 +1,4 @@
-defmodule Roadbook.Supervisor do
+defmodule Roadbook.Accounts.Supervisor do
   @moduledoc false
 
   use Supervisor
@@ -10,11 +10,7 @@ defmodule Roadbook.Supervisor do
   @impl true
   def init(_args) do
     children = [
-      Roadbook.Metrics,
-      Roadbook.EventStore,
-      Roadbook.Repo,
-      {Oban, Application.fetch_env!(:roadbook, Oban)},
-      Roadbook.Accounts.Supervisor
+      Roadbook.Accounts.Subcriptions.Logger
     ]
 
     Supervisor.init(children, strategy: :one_for_one)

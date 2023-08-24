@@ -4,9 +4,9 @@ defmodule Roadbook.Accounts do
   """
 
   import Ecto.Query, warn: false
-  alias Roadbook.Repo
 
   alias Roadbook.Accounts.{User, UserNotifier, UserToken}
+  alias Roadbook.{EventStore, Repo}
 
   ## Database getters
 
@@ -78,6 +78,7 @@ defmodule Roadbook.Accounts do
     %User{}
     |> User.registration_changeset(attrs)
     |> Repo.insert()
+    |> EventStore.ok("users", fn u -> %UserCreated{id: u.id} end)
   end
 
   @doc """

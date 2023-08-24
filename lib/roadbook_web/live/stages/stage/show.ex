@@ -3,7 +3,6 @@ defmodule RoadbookWeb.Stages.StageLive.Show do
 
   use RoadbookWeb, :live_view
 
-  alias Roadbook.Positioning.GpxParser
   alias Roadbook.Stages
 
   @impl true
@@ -16,8 +15,7 @@ defmodule RoadbookWeb.Stages.StageLive.Show do
     {:noreply,
      socket
      |> assign(:page_title, page_title(socket.assigns.live_action))
-     |> assign(:stage, Stages.get_stage!(id))
-     |> assign(:map, map)}
+     |> assign(:stage, Stages.get_stage!(id))}
   end
 
   @impl true

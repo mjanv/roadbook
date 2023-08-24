@@ -77,7 +77,14 @@ defmodule Roadbook.MixProject do
       ],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       quality: ["format --check-formatted", "credo --strict"],
-      test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
+      test: [
+        "ecto.create --quiet",
+        "ecto.migrate --quiet",
+        "event_store.drop --quiet",
+        "event_store.create --quiet",
+        "event_store.init --quiet",
+        "test"
+      ],
       "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
       "assets.build": ["tailwind default", "esbuild default"],
       "assets.deploy": ["tailwind default --minify", "esbuild default --minify", "phx.digest"]
