@@ -21,7 +21,7 @@
       {
         "id": "osm",
         "type": "raster",
-        "source": "osm" // This must match the source key above
+        "source": "osm"
       }
     ]
   };
@@ -32,4 +32,6 @@
       center: [2.213749, 46.227638],
       zoom: 5
     });
+
+    new maplibregl.Marker().setLngLat([2.213749, 46.227638]).addTo(map);
 </script>

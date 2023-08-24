@@ -24,6 +24,7 @@ defmodule RoadbookWeb.Router do
         RoadbookWeb.Components.NavigationBar
       ] do
       live "/climbs", Climbs.ClimbsLive.Index, :index
+      live "/climbs/:id", Climbs.ClimbsLive.Show, :show
 
       live "/stages", Stages.StageLive.Index, :index
       live "/stages/stage/new", Stages.StageLive.Index, :new

@@ -39,11 +39,13 @@ just run
 - [ ] Write a climb research engine to filter climbs by name, elevation, average slope or start/stop
 - [ ] Create an elevation profile object
 - [ ] Climb Profile graph generator
+- [ ] PDF generation tool
 
 ### Web
 
 - [x] User accounts can be created from a registration page
 - [x] Users can log in or out.
+- [ ] Users can create accounts from Komoot or Strava Oauth2
 - [ ] The homepage is an infinite map displaying availables climbs
 - [ ] An user can drag&drop an GPX file to the server
 - [ ] When a user submits a GPX file,
@@ -61,6 +63,7 @@ just run
 ### Release
 
 - [x] Code quality is evaluated by Dialyzer
+- [x] A developer documentation can be built from source code
 - [x] Github actions are used to test the quality, run the unit tests and deploy the applications
 - [x] The application can be deployed on Fly.io
 - [x] The application runtime can be monitored using Prometheus/Grafana

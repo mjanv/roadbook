@@ -1,0 +1,10 @@
+<div class="max-w-7xl mx-auto py-12 sm:px-6 lg:px-8">
+  <canvas
+    id="line_chart"
+    phx-hook="climbProfile"
+    class="w-full"
+    data-points={Jason.encode!(@points)}
+    data-colors={Jason.encode!(@colors)}
+  >
+  </canvas>
+</div>
