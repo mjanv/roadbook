@@ -60,7 +60,7 @@ just run
 
 ### Release
 
-- [ ] Code quality is evaluated by Dialyzer
+- [x] Code quality is evaluated by Dialyzer
 - [x] Github actions are used to test the quality, run the unit tests and deploy the applications
 - [x] The application can be deployed on Fly.io
 - [x] The application runtime can be monitored using Prometheus/Grafana
@@ -70,3 +70,5 @@ just run
 
 - [Playing with GPX tracks in Elixir and PostGIS](https://caspg.com/blog/playing-with-gpx-tracks-in-elixir-and-postgis)
 - [How to draw routes on a Maplibre GL (Mapbox GL) map](https://www.geoapify.com/tutorial/draw-route-on-the-maplibre-mapbox-map)
+- [Create a to-do list app with Phoenix, React, and TypeScript](https://blog.logrocket.com/to-do-list-phoenix-react-typescript/)
+- [Modern Webapps with React, Phoenix, Elixir and TypeScript](https://bpaulino.com/entries/modern-webapps-with-elixir-phoenix-typescript-react)

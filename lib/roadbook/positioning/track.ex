@@ -1,6 +1,8 @@
 defmodule Roadbook.Positioning.Track do
   @moduledoc false
 
+  alias Roadbook.Positioning.{ElevationProfile, Segment}
+
   defstruct [:name, :segments, :profiles]
 
   @type t() :: %__MODULE__{
@@ -8,8 +10,6 @@ defmodule Roadbook.Positioning.Track do
           segments: [Segment.t()],
           profiles: [ElevationProfile.t()]
         }
-
-  alias Roadbook.Positioning.ElevationProfile
 
   def compute(%__MODULE__{segments: segments} = track) do
     %{track | profiles: Enum.map(segments, &ElevationProfile.compute/1)}

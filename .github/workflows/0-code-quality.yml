@@ -57,3 +57,5 @@ jobs:
       run: mix format --check-formatted
     - name: Check Credo
       run: mix credo --strict
+    - name: Check Credo
+      run: mix dialyzer

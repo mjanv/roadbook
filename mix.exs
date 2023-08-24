@@ -12,7 +12,8 @@ defmodule Roadbook.MixProject do
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      dialyzer: [plt_add_apps: [:mix]]
     ]
   end
 
@@ -76,7 +77,7 @@ defmodule Roadbook.MixProject do
         "run priv/repo/seeds.exs"
       ],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
-      quality: ["format --check-formatted", "credo --strict"],
+      quality: ["format --check-formatted", "credo --strict", "dialyzer"],
       test: [
         "ecto.create --quiet",
         "ecto.migrate --quiet",
