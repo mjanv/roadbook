@@ -12,6 +12,15 @@ if config_env() == :prod do
       For example: ecto://USER:PASS@HOST/DATABASE
       """
 
+  database_url =
+    database_url
+    |> String.replace("sslmode=disable", "ssl=false")
+    |> String.replace("sslmode=allow", "ssl=false")
+    |> String.replace("sslmode=prefer", "ssl=true")
+    |> String.replace("sslmode=require", "ssl=true")
+    |> String.replace("sslmode=verify-ca", "ssl=true")
+    |> String.replace("sslmode=verify-full", "ssl=true")
+
   maybe_ipv6 = if System.get_env("ECTO_IPV6") in ~w(true 1), do: [:inet6], else: []
 
   config :roadbook, Roadbook.Repo,
