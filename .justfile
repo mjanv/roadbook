@@ -8,6 +8,10 @@ start:
 run:
     mix phx.server
 
+docs:
+    mix docs
+    firefox doc/index.html
+
 db:
     PGPASSWORD=postgres psql -d roadbook_dev -h localhost -p 5432 -U postgres
 
