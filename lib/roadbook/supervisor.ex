@@ -13,8 +13,8 @@ defmodule Roadbook.Supervisor do
       Roadbook.Metrics,
       Roadbook.EventStore,
       Roadbook.Repo,
-      {Oban, Application.fetch_env!(:roadbook, Oban)}
-      # Roadbook.Accounts.Supervisor
+      {Oban, Application.fetch_env!(:roadbook, Oban)},
+      Roadbook.Accounts.Supervisor
     ]
 
     Supervisor.init(children, strategy: :one_for_one)
