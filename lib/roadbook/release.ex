@@ -28,8 +28,8 @@ defmodule Roadbook.Release do
     end
 
     for store <- stores() do
-      :ok = Tasks.Create.exec(config, [])
-      :ok = Tasks.Init.exec(config, [])
+      :ok = Tasks.Create.exec(store.config(), [])
+      :ok = Tasks.Init.exec(store.config(), [])
       :ok = Tasks.Migrate.exec(store.config(), [])
     end
   end
