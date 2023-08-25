@@ -3,17 +3,28 @@
 ![Banner](priv/static/images/banner.png)
 
 <p align="center">
-• [**Live demo**](https://roadbook.fly.dev/) • [**Roadmap**](https://github.com/users/mjanv/projects/3) • [**Github**](https://github.com/mjanv) •
+  •
+  <a href="https://roadbook.fly.dev/"><b>Live demo</b></a> •
+  <a href="https://github.com/users/mjanv/projects/3"><b>Roadmap</b></a> •
+  <a href="https://www.figma.com/file/ZxA1656udohBlMsEj8ofSK/Roadbook-Domain-Map?type=whiteboard&t=Y0rFnZdNsAspzvCe-1">Domain Mapping</a> •
+  <a href="https://www.figma.com/file/HVuZImZqz042oSA522f2uh/Roadbook?type=design&node-id=0%3A1&mode=design&t=Y0rFnZdNsAspzvCe-1">Website design</a> •
+  <a href="https://github.com/mjanv"><b>Github</b></a>
+  •
 </p>
 
-*Roadbook* is a tool to help route planner ([Komoot](https://www.komoot.com), [Strava](https://www.strava.com), ...) users to create elevation maps from a GPS track.
+*Roadbook* is a website helping you bridge features between your favorite route planner and climb finder websites.
 
-- When a cyclist sees the trace of a stage, he can see **climb profiles** such as [example #1](https://climbfinder.com/en/climbs/alpe-d-huez) or [example #2](https://www.cols-cyclisme.com/vanoise/france/col-de-la-loze-depuis-brides-les-bains-c3612.htm) that breaks down mountain pass kilometer per kilometer with the percentage elevation per kilometer.
-- When a cyclist uses a route planner such as Komoot, he can have the UI representation of the full route with the total elevation and the full profile, but no climbs breakdown.
+- On climb finders such as [climbfinder.com](https://climbfinder.com/en) or [cols-cyclisme.com](https://www.cols-cyclisme.com/), a cyclist can see climb profiles ([Alpe d'Huez](https://climbfinder.com/en/climbs/alpe-d-huez), [Col de la Loze](https://www.cols-cyclisme.com/vanoise/france/col-de-la-loze-depuis-brides-les-bains-c3612.htm),...) that breakdowns climb average slope kilometer per kilometer.
+- On route planners such as [Komoot](https://www.komoot.com) or [Strava](https://www.strava.com), a cyclist can creates a route where he can see a map display with the full elevation profile, but with no climbs breakdown.
+- On professionnal cycling events, all riders have access to a printed detailled roadbook ([Tour de france 1957/1962/1969 roadbooks](https://procyclingmaps.com/tourdefrance/), [L'étape du tour roadbook](https://www.letapedutourdefrance.com/en/extra-services/road-book), [Giro d'Italia roadbook](https://www.giroditalia.it/en/roadbook/), [Vuelta roadbook](https://www.lavuelta.es/en/interactive-roadbook),...).
 
-This application builds a full roadbook (all climbs profiles) for a given route.
+*Roadbook* helps you **draw and print a full roadbook from a collection of stages of favorite route planner**.
 
-A [roadmap](https://github.com/users/mjanv/projects/3) of next developments is available on Github.
+## Roadmap
+
+A [roadmap](https://github.com/users/mjanv/projects/3) of next developments is available on Github. The current beta version of the website is available [here](https://roadbook.fly.dev/), with no guarantee of data retention.
+
+Current [domain mapping](https://www.figma.com/file/ZxA1656udohBlMsEj8ofSK/Roadbook-Domain-Map?type=whiteboard&t=Y0rFnZdNsAspzvCe-1) and [website design](https://www.figma.com/file/HVuZImZqz042oSA522f2uh/Roadbook?type=design&node-id=0%3A1&mode=design&t=Y0rFnZdNsAspzvCe-1) is available on Figma.
 
 ## Development
 
