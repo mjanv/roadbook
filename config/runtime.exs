@@ -59,7 +59,7 @@ if config_env() == :prod do
       host: System.get_env("GRAFANA_HOST") || raise("GRAFANA_HOST is required"),
       auth_token: System.get_env("GRAFANA_TOKEN") || raise("GRAFANA_TOKEN is required"),
       upload_dashboards_on_start: true,
-      folder_name: "Roadbook Dashboards",
+      folder_name: "Roadbook",
       annotate_app_lifecycle: true
     ]
 

@@ -21,4 +21,28 @@ defmodule Roadbook.Positioning.ElevationProfile do
 
     %__MODULE__{vectors: vectors}
   end
+
+  def stats(%__MODULE__{vectors: vectors}) do
+    up =
+      vectors
+      |> Enum.map(fn x -> x.gai end)
+      |> Enum.filter(fn x -> x > 0 end)
+      |> Enum.sum()
+      |> Float.round(2)
+
+    down =
+      vectors
+      |> Enum.map(fn x -> x.gai end)
+      |> Enum.filter(fn x -> x < 0 end)
+      |> Enum.sum()
+      |> Float.round(2)
+
+    distance =
+      vectors
+      |> Enum.map(fn x -> x.dis end)
+      |> Enum.sum()
+      |> Float.round(2)
+
+    [up: up, down: -down, distance: distance]
+  end
 end

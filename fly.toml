@@ -10,7 +10,7 @@ swap_size_mb = 512
   PORT = "8080"
 
 [processes]
-  app = "/bin/sh -c '/app/bin/migrate && /app/bin/server'"
+  app = "/bin/sh -c '/app/bin/server'"
 
 [http_service]
   internal_port = 8080

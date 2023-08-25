@@ -1,37 +1,40 @@
 <!-- livebook:{"autosave_interval_s":30} -->
 
-# Geodata parsing
+# Climb detection from GPX files
 
 ```elixir
-Mix.install([
-  {:roadbook, path: "."}
-])
+Mix.install([{:roadbook, path: "."}])
 ```
 
 ## Load data from a GPX file
 
+Data can be loaded from a GPX file extracted from Komoot. A first stats from the profile can be computed (Total elevation, total descent, total distance in meters)
+
 ```elixir
 route = Roadbook.Positioning.GpxParser.read("priv/gps/test_komoot.gpx")
-route = Roadbook.Positioning.Track.compute_route_from_gpx_data(route)
+route = Roadbook.Positioning.Track.compute(route)
 
-route = Enum.map(route, &Map.from_struct(&1))
-
-stats = Roadbook.Positioning.Track.stats(route)
+stats = Roadbook.Positioning.ElevationProfile.stats(List.first(route.profiles))
 ```
 
-## Route Map
+## Track map rendering
+
+A map can be rendered from the first track segment.
 
 ```elixir
+segment = List.first(route.segments)
+point = List.first(segment.points)
+
 MapLibre.new(
   style: :terrain,
-  center: {List.first(route).lon, List.first(route).lat},
+  center: {point.lon, point.lat},
   zoom: 9
 )
 |> MapLibre.add_table_source(
   "map",
   %{
-    "lat" => Enum.map(route, fn x -> x.lat end),
-    "lon" => Enum.map(route, fn x -> x.lon end)
+    "lat" => Enum.map(segment.points, fn x -> x.lat end),
+    "lon" => Enum.map(segment.points, fn x -> x.lon end)
   },
   {:lng_lat, ["lon", "lat"]}
 )
@@ -49,42 +52,53 @@ MapLibre.new(
 )
 ```
 
-## Profile Maps
+## Profile map rendering
 
-<!-- livebook:{"attrs":{"chart_title":"Elevation","height":null,"layers":[{"active":true,"chart_type":"point","color_field":"gai","color_field_aggregate":null,"color_field_bin":null,"color_field_scale_scheme":null,"color_field_type":"quantitative","data_variable":"route","geodata_color":"blue","latitude_field":null,"longitude_field":null,"x_field":"pos","x_field_aggregate":null,"x_field_bin":null,"x_field_scale_type":null,"x_field_type":"quantitative","y_field":"ele","y_field_aggregate":null,"y_field_bin":null,"y_field_scale_type":null,"y_field_type":"quantitative"}],"vl_alias":"Elixir.VegaLite","width":800},"chunks":null,"kind":"Elixir.KinoVegaLite.ChartCell","livebook_object":"smart_cell"} -->
+The profile maps (elevation and elevation gain) can be rendered.
 
 ```elixir
-VegaLite.new(width: 800, title: "Elevation")
-|> VegaLite.data_from_values(route, only: ["pos", "ele", "gai"])
+profile =
+  route.profiles
+  |> List.first()
+  |> Map.get(:vectors)
+  |> Enum.map(&Map.from_struct/1)
+```
+
+<!-- livebook:{"attrs":{"chart_title":"Elevation","height":250,"layers":[{"active":true,"chart_type":"point","color_field":null,"color_field_aggregate":null,"color_field_bin":null,"color_field_scale_scheme":null,"color_field_type":null,"data_variable":"profile","geodata_color":"blue","latitude_field":null,"longitude_field":null,"x_field":"pos","x_field_aggregate":null,"x_field_bin":null,"x_field_scale_type":null,"x_field_type":"quantitative","y_field":"ele","y_field_aggregate":null,"y_field_bin":null,"y_field_scale_type":null,"y_field_type":"quantitative"}],"vl_alias":"Elixir.VegaLite","width":800},"chunks":null,"kind":"Elixir.KinoVegaLite.ChartCell","livebook_object":"smart_cell"} -->
+
+```elixir
+VegaLite.new(width: 800, height: 250, title: "Elevation")
+|> VegaLite.data_from_values(profile, only: ["pos", "ele"])
 |> VegaLite.mark(:point)
 |> VegaLite.encode_field(:x, "pos", type: :quantitative)
 |> VegaLite.encode_field(:y, "ele", type: :quantitative)
-|> VegaLite.encode_field(:color, "gai", type: :quantitative)
 ```
 
-<!-- livebook:{"attrs":{"chart_title":null,"height":null,"layers":[{"active":true,"chart_type":"bar","color_field":"dir","color_field_aggregate":null,"color_field_bin":null,"color_field_scale_scheme":null,"color_field_type":"quantitative","data_variable":"route","geodata_color":"blue","latitude_field":null,"longitude_field":null,"x_field":"pos","x_field_aggregate":null,"x_field_bin":null,"x_field_scale_type":null,"x_field_type":"quantitative","y_field":"gai","y_field_aggregate":null,"y_field_bin":null,"y_field_scale_type":null,"y_field_type":"quantitative"}],"vl_alias":"Elixir.VegaLite","width":800},"chunks":null,"kind":"Elixir.KinoVegaLite.ChartCell","livebook_object":"smart_cell"} -->
+<!-- livebook:{"attrs":{"chart_title":null,"height":null,"layers":[{"active":true,"chart_type":"bar","color_field":"is_climb","color_field_aggregate":null,"color_field_bin":null,"color_field_scale_scheme":null,"color_field_type":"nominal","data_variable":"profile","geodata_color":"blue","latitude_field":null,"longitude_field":null,"x_field":"pos","x_field_aggregate":null,"x_field_bin":null,"x_field_scale_type":null,"x_field_type":"quantitative","y_field":"gai","y_field_aggregate":null,"y_field_bin":null,"y_field_scale_type":null,"y_field_type":"quantitative"}],"vl_alias":"Elixir.VegaLite","width":800},"chunks":null,"kind":"Elixir.KinoVegaLite.ChartCell","livebook_object":"smart_cell"} -->
 
 ```elixir
 VegaLite.new(width: 800)
-|> VegaLite.data_from_values(route, only: ["pos", "gai", "dir"])
+|> VegaLite.data_from_values(profile, only: ["pos", "gai", "is_climb"])
 |> VegaLite.mark(:bar)
 |> VegaLite.encode_field(:x, "pos", type: :quantitative)
 |> VegaLite.encode_field(:y, "gai", type: :quantitative)
-|> VegaLite.encode_field(:color, "dir", type: :quantitative)
+|> VegaLite.encode_field(:color, "is_climb", type: :nominal)
 ```
 
 ## Climb detector
 
+Climbs (a continuous segment of positive elevation gains ) can be detected. From the detection, each climb average slope per distance unit (100m, 1km) can be computed.
+
 ```elixir
-climbs = Roadbook.Climbs.ClimbDetector.find_climbs(route)
-route = Roadbook.Climbs.ClimbDetector.annotate_climbs(route)
+climbs = Roadbook.Climbs.ClimbDetector.find_climbs(profile)
+profile = Roadbook.Climbs.ClimbDetector.annotate_climbs(profile)
 ```
 
-<!-- livebook:{"attrs":{"chart_title":null,"height":null,"layers":[{"active":true,"chart_type":"point","color_field":"is_climb","color_field_aggregate":null,"color_field_bin":null,"color_field_scale_scheme":null,"color_field_type":"quantitative","data_variable":"route","geodata_color":"blue","latitude_field":null,"longitude_field":null,"x_field":"pos","x_field_aggregate":null,"x_field_bin":null,"x_field_scale_type":null,"x_field_type":"quantitative","y_field":"ele","y_field_aggregate":null,"y_field_bin":null,"y_field_scale_type":null,"y_field_type":"quantitative"}],"vl_alias":"Elixir.VegaLite","width":800},"chunks":null,"kind":"Elixir.KinoVegaLite.ChartCell","livebook_object":"smart_cell"} -->
+<!-- livebook:{"attrs":{"chart_title":null,"height":null,"layers":[{"active":true,"chart_type":"point","color_field":"is_climb","color_field_aggregate":null,"color_field_bin":null,"color_field_scale_scheme":null,"color_field_type":"quantitative","data_variable":"profile","geodata_color":"blue","latitude_field":null,"longitude_field":null,"x_field":"pos","x_field_aggregate":null,"x_field_bin":null,"x_field_scale_type":null,"x_field_type":"quantitative","y_field":"ele","y_field_aggregate":null,"y_field_bin":null,"y_field_scale_type":null,"y_field_type":"quantitative"}],"vl_alias":"Elixir.VegaLite","width":800},"chunks":null,"kind":"Elixir.KinoVegaLite.ChartCell","livebook_object":"smart_cell"} -->
 
 ```elixir
 VegaLite.new(width: 800)
-|> VegaLite.data_from_values(route, only: ["pos", "ele", "is_climb"])
+|> VegaLite.data_from_values(profile, only: ["pos", "ele", "is_climb"])
 |> VegaLite.mark(:point)
 |> VegaLite.encode_field(:x, "pos", type: :quantitative)
 |> VegaLite.encode_field(:y, "ele", type: :quantitative)
@@ -95,7 +109,7 @@ VegaLite.new(width: 800)
 profile1000 =
   climbs
   |> Enum.map(fn range ->
-    route
+    profile
     |> Enum.filter(fn p -> p.pos in range end)
     |> Enum.map(&struct(Roadbook.Positioning.Point, &1))
     |> then(&%Roadbook.Climbs.ClimbProfile{segment: &1})
@@ -107,7 +121,7 @@ profile1000 =
 profile100 =
   climbs
   |> Enum.map(fn range ->
-    route
+    profile
     |> Enum.filter(fn p -> p.pos in range end)
     |> Enum.map(&struct(Roadbook.Positioning.Point, &1))
     |> then(&%Roadbook.Climbs.ClimbProfile{segment: &1})
