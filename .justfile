@@ -9,16 +9,20 @@ start:
     sleep 3
     mix ecto.setup
 
+# Start the notebooks (Livebook)
+notebooks:
+    docker-compose up --detach livebook
+
 # Stop the development stack
 stop:
     docker-compose down --volumes
 
 # Run the application
-app:
+server: start
     mix phx.server
 
 # Run code quality and unit tests
-tests:
+tests: start
     @mix quality
     @mix test
 

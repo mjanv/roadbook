@@ -18,8 +18,7 @@ To develop, you need to have [just](https://github.com/casey/just), [docker](htt
 To run the web application for local development,
 
 ```bash
-just start
-just app
+just server
 ```
 
 ### Notebooks
@@ -27,7 +26,7 @@ just app
 To help develop the application, you can use the notebooks accessible in the `notebooks/` folder. Any notebook can be displayed using the [local livebook](http://localhost:8080/open/file),
 
 ```bash
-just start
+just notebooks
 ```
 
 ### Tests
@@ -41,10 +40,18 @@ just tests
 
 ### Local demonstration
 
-To run the application stack (Application, Livebook, [Grafana](http://localhost:3000)),
+To run the full application stack (Application, Livebook, [Grafana](http://localhost:3000)) for demonstration purposes,
 
 ```bash
-just docker
+just app
+```
+
+### Local demonstration
+
+All stacks (development, notebooks, demonstration) can be stopped using,
+
+```bash
+just stop
 ```
 
 ## Roadmap
