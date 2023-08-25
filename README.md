@@ -8,7 +8,7 @@
   <a href="https://github.com/users/mjanv/projects/3"><b>Roadmap</b></a> •
   <a href="https://www.figma.com/file/ZxA1656udohBlMsEj8ofSK/Roadbook-Domain-Map?type=whiteboard&t=Y0rFnZdNsAspzvCe-1"><b>Domain Mapping</b></a> •
   <a href="https://www.figma.com/file/HVuZImZqz042oSA522f2uh/Roadbook?type=design&node-id=0%3A1&mode=design&t=Y0rFnZdNsAspzvCe-1"><b>Website design</b></a> •
-  <a href="https://github.com/mjanv"><b>Github repository</b></a>
+  <a href="https://github.com/mjanv/roadbook"><b>Github repository</b></a>
   •
 </p>
 
