@@ -1,8 +1,8 @@
 # Roadbook
 
-![Banner](priv/static/images/banner.png)
-
 ---
+
+![Banner](priv/static/images/banner.png)
 
 <p align="center">
   •
