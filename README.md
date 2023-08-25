@@ -31,11 +31,11 @@
 
 ## Development
 
-To develop, you need to have [just](https://github.com/casey/just), [docker](https://www.docker.com/) and [docker-compose](https://docs.docker.com/compose/) installed.
+To develop, you need to have [just](https://github.com/casey/just), [docker](https://www.docker.com/) and [docker-compose](https://docs.docker.com/compose/) installed. Differents stacks can be started to help you through development.
 
 ### Local development
 
-To run the web application for local development,
+To run the [web application](http://localhost:4001) for local development,
 
 ```bash
 just server
@@ -54,21 +54,20 @@ just notebooks
 To ensure that code quality and unit tests requirements are met,
 
 ```bash
-just start
 just tests
 ```
 
 ### Local demonstration
 
-To run the full application stack (Application, Livebook, [Grafana](http://localhost:3000)) for demonstration purposes,
+To run the full application stack ([Application](http://localhost:4001), [Livebook](http://localhost:8080/open/file), [Grafana](http://localhost:3000)) for demonstration purposes,
 
 ```bash
 just app
 ```
 
-### Local demonstration
+### Stop the stack
 
-All stacks (development, notebooks, demonstration) can be stopped using,
+All stacks (local development, notebooks, tests, local demonstration) can be stopped using,
 
 ```bash
 just stop
