@@ -1,7 +1,5 @@
 # Roadbook
 
----
-
 ![Banner](priv/static/images/banner.png)
 
 <p align="center">
@@ -16,7 +14,7 @@
 
 ---
 
-*Roadbook* is a website helping you bridge features between your favorite route planner and climb finder websites.
+*Roadbook* is a website bridging features between your favorite route planner and climb finder websites.
 
 - On climb finders such as [climbfinder.com](https://climbfinder.com/en) or [cols-cyclisme.com](https://www.cols-cyclisme.com/), a cyclist can see climb profiles ([Alpe d'Huez](https://climbfinder.com/en/climbs/alpe-d-huez), [Col de la Loze](https://www.cols-cyclisme.com/vanoise/france/col-de-la-loze-depuis-brides-les-bains-c3612.htm),...) that breakdowns climb average slope kilometer per kilometer.
 - On route planners such as [Komoot](https://www.komoot.com) or [Strava](https://www.strava.com), a cyclist can creates a route where he can see a map display with the full elevation profile, but with no climbs breakdown.
@@ -26,9 +24,10 @@
 
 ## Roadmap
 
-A [roadmap](https://github.com/users/mjanv/projects/3) of next developments is available on Github. The current beta version of the website is available [here](https://roadbook.fly.dev/), with no guarantee of data retention.
-
-Current [domain mapping](https://www.figma.com/file/ZxA1656udohBlMsEj8ofSK/Roadbook-Domain-Map?type=whiteboard&t=Y0rFnZdNsAspzvCe-1) and [website design](https://www.figma.com/file/HVuZImZqz042oSA522f2uh/Roadbook?type=design&node-id=0%3A1&mode=design&t=Y0rFnZdNsAspzvCe-1) is available on Figma.
+- A [roadmap](https://github.com/users/mjanv/projects/3) of next developments is available on Github. 
+- The current beta version of the website is available [here](https://roadbook.fly.dev/), with no guarantee of data retention.
+- Current [domain mapping](https://www.figma.com/file/ZxA1656udohBlMsEj8ofSK/Roadbook-Domain-Map?type=whiteboard&t=Y0rFnZdNsAspzvCe-1) is available on Figma.
+- Current [website design](https://www.figma.com/file/HVuZImZqz042oSA522f2uh/Roadbook?type=design&node-id=0%3A1&mode=design&t=Y0rFnZdNsAspzvCe-1) is available on Figma.
 
 ## Development
 

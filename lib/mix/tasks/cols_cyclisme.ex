@@ -18,6 +18,6 @@ defmodule Mix.Tasks.Providers.Cols do
     |> Enum.map(fn climb ->
       "#{climb[:nom]};#{climb[:depart]};#{climb[:region]};#{climb[:country]};#{climb[:url]}\n"
     end)
-    |> then(&File.write!("cols_cyclisme_climbs.csv", &1))
+    |> then(&File.write!("data/cols_cyclisme_climbs.csv", &1))
   end
 end

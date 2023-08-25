@@ -35,4 +35,6 @@ roadbook-*.tar
 npm-debug.log
 /assets/node_modules/
 
+# Data folders & files
+/data/
 *.csv
