@@ -25,7 +25,7 @@
 ## Roadmap
 
 - A [roadmap](https://github.com/users/mjanv/projects/3) of next developments is available on Github.
-- The current [beta version](https://roadbook.fly.dev/) of the website is available, with no guarantee of data retention.
+- The current [beta version](https://roadbook.fly.dev/) of the website is available online, with no guarantee of data retention.
 - Current [domain mapping](https://www.figma.com/file/ZxA1656udohBlMsEj8ofSK/Roadbook-Domain-Map?type=whiteboard&t=Y0rFnZdNsAspzvCe-1) is available on Figma.
 - Current [website design](https://www.figma.com/file/HVuZImZqz042oSA522f2uh/Roadbook?type=design&node-id=0%3A1&mode=design&t=Y0rFnZdNsAspzvCe-1) is available on Figma.
 
