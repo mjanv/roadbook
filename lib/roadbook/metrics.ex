@@ -14,7 +14,6 @@ defmodule Roadbook.Metrics do
       Plugins.Ecto,
       Plugins.Oban,
       Plugins.PhoenixLiveView
-      # Roadbook.Users.PromExPlugin
     ]
   end
 
@@ -34,7 +33,6 @@ defmodule Roadbook.Metrics do
       {:prom_ex, "ecto.json"},
       {:prom_ex, "oban.json"},
       {:prom_ex, "phoenix_live_view.json"}
-      # {:roadbook, "/dashboards/user_metrics.json"}
     ]
   end
 end
