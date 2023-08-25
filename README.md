@@ -4,7 +4,7 @@
 
 <p align="center">
   •
-  <a href="https://roadbook.fly.dev/"><b>Live demo</b></a> •
+  <a href="https://roadbook.fly.dev/"><b>Beta website</b></a> •
   <a href="https://github.com/users/mjanv/projects/3"><b>Roadmap</b></a> •
   <a href="https://www.figma.com/file/ZxA1656udohBlMsEj8ofSK/Roadbook-Domain-Map?type=whiteboard&t=Y0rFnZdNsAspzvCe-1"><b>Domain Mapping</b></a> •
   <a href="https://www.figma.com/file/HVuZImZqz042oSA522f2uh/Roadbook?type=design&node-id=0%3A1&mode=design&t=Y0rFnZdNsAspzvCe-1"><b>Website design</b></a> •
@@ -18,7 +18,7 @@
 
 - On climb finders such as [climbfinder.com](https://climbfinder.com/en) or [cols-cyclisme.com](https://www.cols-cyclisme.com/), a cyclist can see climb profiles ([Alpe d'Huez](https://climbfinder.com/en/climbs/alpe-d-huez), [Col de la Loze](https://www.cols-cyclisme.com/vanoise/france/col-de-la-loze-depuis-brides-les-bains-c3612.htm),...) that breakdowns climb average slope kilometer per kilometer.
 - On route planners such as [Komoot](https://www.komoot.com) or [Strava](https://www.strava.com), a cyclist can creates a route where he can see a map display with the full elevation profile, but with no climbs breakdown.
-- On professionnal cycling events, all riders have access to a printed detailled roadbook ([Tour de france 1957/1962/1969 roadbooks](https://procyclingmaps.com/tourdefrance/), [L'étape du tour roadbook](https://www.letapedutourdefrance.com/en/extra-services/road-book), [Giro d'Italia roadbook](https://www.giroditalia.it/en/roadbook/), [Vuelta roadbook](https://www.lavuelta.es/en/interactive-roadbook),...).
+- On professionnal cycling events, all riders have access to a printed detailled roadbook ([Tour de France 1957-1962-1969 roadbooks](https://procyclingmaps.com/tourdefrance/), [L'étape du tour roadbook](https://www.letapedutourdefrance.com/en/extra-services/road-book), [Giro d'Italia roadbook](https://www.giroditalia.it/en/roadbook/), [Vuelta roadbook](https://www.lavuelta.es/en/interactive-roadbook),...).
 
 *Roadbook* helps you **draw and print a full roadbook from a collection of stages of favorite route planner**.
 
